@@ -66,13 +66,13 @@ app.use('/api', api);
 
 // Single page app method for 404s, return the static html file
 // Handles all routes so you do not get a not found error
-app.get('*', function (req, res, next) {
+app.get('*', (req, res, next) => {
   res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
 });
 
 
 // Error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

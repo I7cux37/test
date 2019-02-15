@@ -32,6 +32,7 @@ class NavBar extends React.Component {
             <ul className="nav navbar-nav">
               {isAuthenticated && <li><NavLink to="/private1" activeClassName="active">Private 1</NavLink></li> }
               {isAuthenticated && <li><NavLink to="/private2" activeClassName="active">Private 2</NavLink></li> }
+              {isAuthenticated && <li><NavLink to="/users" activeClassName="active">Users</NavLink></li> }
               <li><NavLink to="/public1" activeClassName="active">Public 1</NavLink></li>
               <li><NavLink to="/public2" activeClassName="active">Public 2</NavLink></li>
               <li className="dropdown">

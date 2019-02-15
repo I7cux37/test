@@ -33,6 +33,21 @@ const MessageService =
         });
       },
 
+      getUsers: (callback) => {
+        if (!$.isFunction(callback)) throw new Error('callback function is required');
+
+        $.ajax({
+          url: '/api/users',
+          type: 'GET',
+          dataType: 'json',
+          beforeSend: setHeader
+        }).done(function(data) {
+          return callback(null, data);
+        }).fail(function(jqxhr, textStatus, error) {
+          return callback(error);
+        });
+      },
+
       /**
        * Get Message 2
        * @param {function} callback (err, data)

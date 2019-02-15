@@ -9,4 +9,7 @@ router.get('/message/message1', messageController.getMessage1);
 // GET /api/message/message2
 router.get('/message/message2', messageController.getMessage2);
 
+// GET /api/message/message2
+router.get('/users', messageController.getUsers);
+
 module.exports = router;

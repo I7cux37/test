@@ -11,6 +11,7 @@ import Public1 from '../pages/public1';
 import Public2 from '../pages/public2';
 import Private1 from '../pages/private/private1';
 import Private2 from '../pages/private/private2';
+import Users from '../pages/private/users';
 
 class MainRoutes extends React.Component {
 
@@ -24,6 +25,7 @@ class MainRoutes extends React.Component {
         <Route exact path="/signup" component={SignUp} />
         <PrivateRoutes isAuthenticated={Auth.isAuthenticated()}>
           <Switch>
+            <Route exact path="/users" component={Users} />
             <Route path="/private1" component={Private1} />
             <Route path="/private2" component={Private2} />
           </Switch>
